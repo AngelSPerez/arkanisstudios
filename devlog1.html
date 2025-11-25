@@ -166,17 +166,6 @@
         </div>
     </header>
 
-    <!-- IMAGEN DESTACADA -->
-    <section class="py-8 bg-dark">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="rounded-xl overflow-hidden border-2 border-primary/30 box-glow">
-                    <img src="art1.jpeg" alt="Arte Conceptual - The Dark Ronkazid" class="w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTENIDO PRINCIPAL -->
     <article class="py-16 bg-darker">
         <div class="container mx-auto px-6">
@@ -208,27 +197,19 @@
                     <div class="my-12">
                         <h3 class="text-center mb-6"><i class="fa-solid fa-images text-primary mr-2"></i>Bocetos en Progreso</h3>
                         
-                        <!-- Imagen Principal del Boceto -->
-                        <div class="bg-surface border-2 border-primary/30 rounded-xl p-6 box-glow mb-6">
-                            <div class="aspect-video bg-dark/50 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
-                                <!-- AQUÍ VA TU IMAGEN DEL BOCETO -->
-                                <img src="art2.jpeg" alt="Boceto de personaje" class="w-full h-full object-cover">
-
-                            </div>
-                            <p class="text-center text-gray-400 text-sm">
-                                <i class="fa-solid fa-info-circle text-primary mr-2"></i>
-                                Primeros bocetos de diseño de personajes - Trabajo en progreso
-                            </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-surface border border-primary/20 rounded-lg p-3 aspect-square flex items-center justify-center hover:border-primary transition cursor-pointer">
+                                <div class="text-center">
+                                    <img src="art2.jpeg" alt="Boceto de personaje" class="w-full h-full object-cover">
+                                </div>
                         </div>
-
                         <!-- Grid de Miniaturas (opcional para más imágenes) -->
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                             <div class="bg-surface border border-primary/20 rounded-lg p-3 aspect-square flex items-center justify-center hover:border-primary transition cursor-pointer">
                                 <div class="text-center">
-                                    <i class="fa-solid fa-user text-3xl text-primary/30 mb-2"></i>
                                     <img src="art3.jpeg" alt="Boceto de personaje" class="w-full h-full object-cover">
                                 </div>
-                            </div>
+                        </div>
                     </div>
 
                     <!-- SECCIÓN 3: LO QUE VIENE -->
@@ -312,7 +293,7 @@
                 
                 <div class="grid md:grid-cols-2 gap-6">
                     <!-- Devlog Anterior -->
-                    <a href="devlog1.html" class="bg-surface rounded-xl p-6 border border-primary/20 hover:border-primary transition group">
+                    <a href="devlog.html" class="bg-surface rounded-xl p-6 border border-primary/20 hover:border-primary transition group">
                         <p class="text-gray-400 text-sm mb-2">
                             <i class="fa-solid fa-arrow-left mr-2"></i>Anterior
                         </p>
