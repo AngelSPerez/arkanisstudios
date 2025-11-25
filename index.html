@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkanis Studios - The Dark Ronkazid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a855f7',
+                        'primary-dark': '#7e22ce',
+                        dark: '#0a0a0f',
+                        darker: '#05050a',
+                        surface: '#15151f',
+                        'surface-light': '#1f1f2e',
+                    },
+                    fontFamily: {
+                        display: ['Orbitron', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient-animate {
+            background: linear-gradient(-45deg, #05050a, #0a0a0f, #1a0a1f, #0f0a1a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.4);
+        }
+        .text-glow-sm {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+        .box-glow {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #a855f7 0%, #7e22ce 100%);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-darker text-gray-200 font-body selection:bg-primary selection:text-white">
+
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 bg-dark/95 backdrop-blur-md border-b border-primary/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold text-white">
+                ARKANIS<span class="text-primary">STUDIOS</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                <a href="#historia" class="hover:text-primary transition">Historia</a>
+                <a href="#devlog" class="hover:text-primary transition">Devlog</a>
+                <a href="#apoyo" class="hover:text-primary transition">Apoyar</a>
+                <a href="#galeria" class="hover:text-primary transition">Galería</a>
+                <a href="#contacto" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:bg-primary-dark transition hover:shadow-lg hover:shadow-primary/50">
+                    Donar
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-primary/20 absolute w-full left-0">
+            <div class="flex flex-col p-4 space-y-4 text-center">
+                <a href="#inicio" class="block hover:text-primary">Inicio</a>
+                <a href="#historia" class="block hover:text-primary">Historia</a>
+                <a href="#devlog" class="block hover:text-primary">Devlog</a>
+                <a href="#apoyo" class="block hover:text-primary">Apoyar</a>
+                <a href="#galeria" class="block hover:text-primary">Galería</a>
+                <a href="#contacto" class="block text-primary font-bold">Donar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="inicio" class="relative h-screen flex items-center justify-center bg-gradient-animate overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-30"></div>
+        
+        <!-- Efecto de partículas/estrellas -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute w-2 h-2 bg-primary rounded-full animate-pulse" style="top: 20%; left: 10%;"></div>
+            <div class="absolute w-1 h-1 bg-primary rounded-full animate-pulse" style="top: 60%; left: 80%; animation-delay: 0.5s;"></div>
+            <div class="absolute w-2 h-2 bg-primary rounded-full animate-pulse" style="top: 40%; left: 60%; animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10 mt-16">
+            <span class="inline-block py-1 px-4 rounded-full bg-primary/20 text-primary text-sm font-semibold mb-4 border border-primary/50 animate-pulse">
+                En Desarrollo • Indie Game
+            </span>
+            <h1 class="text-6xl md:text-8xl font-display font-black text-white mb-6 leading-tight text-glow">
+                THE DARK<br><span class="text-primary">RONKAZID</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
+                Una épica historia de redención donde un hijo mitad ángel, mitad demonio debe enfrentar a su padre para liberarse de un destino maldito.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#apoyo" class="px-10 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition shadow-lg shadow-primary/25 text-lg">
+                    <i class="fa-solid fa-heart mr-2"></i>Apoyar el Proyecto
+                </a>
+                <a href="#historia" class="px-10 py-4 border-2 border-primary/50 text-primary rounded-lg hover:bg-primary/10 transition text-lg">
+                    <i class="fa-solid fa-book mr-2"></i>Leer la Historia
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#historia" class="text-primary hover:text-white transition">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SINOPSIS -->
+    <section id="historia" class="py-24 bg-dark relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 text-glow-sm">
+                        <i class="fa-solid fa-book-open text-primary mr-3"></i>La Historia
+                    </h2>
+                    <p class="text-gray-400 text-lg">Un viaje oscuro de redención y poder</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-surface border border-primary/20 rounded-xl p-8 hover:border-primary/50 transition box-glow">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-fire text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4">El Infierno Vivido</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Arkanis, hijo del demonio Ronkazid y el ángel caído Roxy, crece en un ambiente de abuso y oscuridad. Determinado a liberarse, emprende un viaje para encontrar dos amuletos legendarios que le darán el poder para enfrentar su destino.
+                        </p>
+                    </div>
+
+                    <div class="bg-surface border border-primary/20 rounded-xl p-8 hover:border-primary/50 transition box-glow">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-gem text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4">Los Amuletos</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            El Amuleto de la Ira multiplica la fuerza cuatro veces al canalizar emociones puras. El Amuleto de la Recuperación puede sanar cualquier herida. Juntos, son la clave para la libertad de Arkanis.
+                        </p>
+                    </div>
+
+                    <div class="bg-surface border border-primary/20 rounded-xl p-8 hover:border-primary/50 transition box-glow">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-users text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4">Aliados y Mentores</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            En su travesía, Arkanis conoce a Eldorin, un sabio mago que le enseña sobre la verdadera naturaleza del poder, y a Lyra, una guerrera que le muestra que la fuerza viene del control, no del rencor.
+                        </p>
+                    </div>
+
+                    <div class="bg-surface border border-primary/20 rounded-xl p-8 hover:border-primary/50 transition box-glow">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-crown text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4">La Batalla Final</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            El enfrentamiento con Ronkazid sacude el Abismo entero. Con la ayuda de Roxy y el Cetro de los Guardianes, Arkanis debe elegir entre la venganza y la redención en una batalla que definirá el destino de todos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition font-semibold">
+                        <i class="fa-solid fa-file-pdf mr-2"></i>Descargar Historia Completa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEVLOG -->
+    <section id="devlog" class="py-24 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12 border-b border-primary/20 pb-4">
+                <div>
+                    <h2 class="text-4xl font-display font-bold text-white text-glow-sm">
+                        <i class="fa-solid fa-code text-primary mr-3"></i>Devlog
+                    </h2>
+                    <p class="text-gray-400 mt-2">Actualizaciones del desarrollo</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Update 1 -->
+                <article class="bg-surface rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition group border border-primary/20">
+                    <div class="h-48 bg-gradient-to-br from-primary/40 to-primary-dark/40 relative overflow-hidden flex items-center justify-center">
+                        <i class="fa-solid fa-gamepad text-6xl text-white/30"></i>
+                        <span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-20">NUEVO</span>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">24 Nov, 2025</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition">Inicio del Proyecto</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Hoy comienza oficialmente el desarrollo de The Dark Ronkazid. Estamos trabajando en los concept art iniciales y el diseño de mecánicas base.
+                        </p>
+                        <a href="#" class="text-primary text-sm font-semibold hover:underline">Leer más</a>
+                    </div>
+                </article>
+
+                <!-- Update 2 -->
+                <article class="bg-surface rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition group border border-primary/20">
+                    <div class="h-48 bg-gradient-to-br from-primary/30 to-primary-dark/30 relative overflow-hidden flex items-center justify-center">
+                        <i class="fa-solid fa-paintbrush text-6xl text-white/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">Próximamente</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition">Arte Conceptual</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Pronto compartiremos los primeros diseños de personajes y ambientes del mundo de Arkanis.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Update 3 -->
+                <article class="bg-surface rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition group border border-primary/20">
+                    <div class="h-48 bg-gradient-to-br from-primary/30 to-primary-dark/30 relative overflow-hidden flex items-center justify-center">
+                        <i class="fa-solid fa-wrench text-6xl text-white/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">Próximamente</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition">Mecánicas de Combate</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Explorando sistemas de combate que reflejen la dualidad de Arkanis entre luz y oscuridad.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CROWDFUNDING -->
+    <section id="apoyo" class="py-24 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 text-glow-sm">
+                        <i class="fa-solid fa-heart text-primary mr-3"></i>Apoya el Desarrollo
+                    </h2>
+                    <p class="text-gray-300 text-lg">
+                        Tu apoyo nos ayuda a hacer realidad esta visión. Cada contribución nos acerca más al lanzamiento.
+                    </p>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div class="bg-surface border border-primary/30 rounded-2xl p-8 mb-12 box-glow">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Recaudado hasta ahora</p>
+                            <p class="text-4xl font-display font-bold text-white">$0<span class="text-xl text-gray-400"> / $2000</span></p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-gray-400 text-sm mb-1">Colaboradores</p>
+                            <p class="text-3xl font-display font-bold text-primary">0</p>
+                        </div>
+                    </div>
+                    <div class="w-full bg-darker rounded-full h-4 overflow-hidden border border-primary/30">
+                        <div class="progress-bar h-full rounded-full transition-all duration-1000" style="width: 0.1%"></div>
+                    </div>
+                    <p class="text-center text-gray-400 text-sm mt-3">0% completado</p>
+                </div>
+
+                <!-- Tiers de recompensas -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <!-- Tier 1 -->
+                    <div class="bg-surface border-2 border-primary/30 rounded-xl p-6 hover:border-primary transition hover:shadow-xl hover:shadow-primary/20">
+                        <div class="text-center mb-4">
+                            <p class="text-primary font-display text-3xl font-bold">$5</p>
+                            <p class="text-gray-400 text-sm">Seguidor</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-300 text-sm mb-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Acceso a actualizaciones exclusivas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Tu nombre en los créditos</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-primary/20 text-primary border border-primary py-2 rounded-lg hover:bg-primary hover:text-white transition font-semibold">
+                            Seleccionar
+                        </a>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="bg-surface border-2 border-primary rounded-xl p-6 hover:shadow-xl hover:shadow-primary/30 transform md:-translate-y-2">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <span class="bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">POPULAR</span>
+                        </div>
+                        <div class="text-center mb-4 pt-2">
+                            <p class="text-primary font-display text-3xl font-bold">$20</p>
+                            <p class="text-gray-400 text-sm">Guardián</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-300 text-sm mb-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Todo lo anterior</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Copia digital del juego al lanzar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Wallpapers exclusivos</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition font-semibold shadow-lg shadow-primary/30">
+                            Seleccionar
+                        </a>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="bg-surface border-2 border-primary/30 rounded-xl p-6 hover:border-primary transition hover:shadow-xl hover:shadow-primary/20">
+                        <div class="text-center mb-4">
+                            <p class="text-primary font-display text-3xl font-bold">$50</p>
+                            <p class="text-gray-400 text-sm">Legendario</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-300 text-sm mb-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Todo lo anterior</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Acceso anticipado al juego</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Arte conceptual exclusivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-primary mr-2 mt-1"></i>
+                                <span>Early Access a "The Dark Ronkazid 2"</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block text-center bg-primary/20 text-primary border border-primary py-2 rounded-lg hover:bg-primary hover:text-white transition font-semibold">
+                            Seleccionar
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-gray-400 mb-4" style="font-size: small; text-align: center; margin-bottom: 20px;">En dado caso que el proyecto no se lleve a cabo, todo el dinero recaudado sera devuelto, excepto por las comisiones de las plataformas bancarias.</p>
+
+                <div class="text-center">
+                    <p class="text-gray-400 mb-4">¿Quieres hacer una donación personalizada?</p>
+                    <a href="#contacto" class="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition font-semibold">
+                        <i class="fa-solid fa-message mr-2"></i>Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="py-24 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 text-glow-sm">
+                    <i class="fa-solid fa-images text-primary mr-3"></i>Galería
+                </h2>
+                <p class="text-gray-400 text-lg">Arte conceptual y avances visuales</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Placeholder images -->
+                <div class="aspect-video bg-surface rounded-xl overflow-hidden border border-primary/20 hover:border-primary/50 transition group cursor-pointer">
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary-dark/20">
+                        <i class="fa-solid fa-image text-6xl text-white/20 group-hover:text-white/40 transition"></i>
+                    </div>
+                </div>
+                <div class="aspect-video bg-surface rounded-xl overflow-hidden border border-primary/20 hover:border-primary/50 transition group cursor-pointer">
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary-dark/20">
+                        <i class="fa-solid fa-image text-6xl text-white/20 group-hover:text-white/40 transition"></i>
+                    </div>
+                </div>
+                <div class="aspect-video bg-surface rounded-xl overflow-hidden border border-primary/20 hover:border-primary/50 transition group cursor-pointer">
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary-dark/20">
+                        <i class="fa-solid fa-image text-6xl text-white/20 group-hover:text-white/40 transition"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-500 italic">Pronto añadiremos concept art y screenshots del desarrollo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE EL ESTUDIO -->
+    <section class="py-24 bg-dark border-y border-primary/20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fa-solid fa-skull text-5xl text-primary mb-6 opacity-80"></i>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">Arkanis Studios</h2>
+                <p class="text-xl text-gray-300 italic mb-8">
+                    "Somos un estudio indie apasionado por crear experiencias narrativas profundas y memorables. The Dark Ronkazid es nuestro primer proyecto, una historia que hemos llevado en el corazón durante años."
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-sm text-gray-400 mb-10">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-gamepad text-primary mr-2"></i>
+                        <span>Desarrollo Indie</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-heart text-primary mr-2"></i>
+                        <span>Narrativa Épica</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-calendar text-primary mr-2"></i>
+                        <span>Fundado en 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-black pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-12">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">ARKANIS STUDIOS</h3>
+                    <p class="text-gray-500 text-sm">Forjando leyendas oscuras</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface text-gray-400 hover:bg-[#5865F2] hover:text-white transition transform hover:-translate-y-1 shadow-lg border border-primary/20" title="Discord">
+                        <i class="fa-brands fa-discord text-xl"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface text-gray-400 hover:bg-[#1DA1F2] hover:text-white transition transform hover:-translate-y-1 shadow-lg border border-primary/20" title="Twitter / X">
+                        <i class="fa-brands fa-x-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface text-gray-400 hover:bg-[#FF0000] hover:text-white transition transform hover:-translate-y-1 shadow-lg border border-primary/20" title="YouTube">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface text-gray-400 hover:bg-primary hover:text-white transition transform hover:-translate-y-1 shadow-lg border border-primary/20" title="Email">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-primary/20 pt-8">
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold mb-4">Mantente Informado</h4>
+                    <form class="flex max-w-sm mx-auto md:mx-0">
+                        <input type="email" placeholder="tu@email.com" class="bg-surface text-white px-4 py-2 rounded-l outline-none focus:ring-2 focus:ring-primary w-full border border-primary/20">
+                        <button type="button" class="bg-primary text-white px-4 py-2 rounded-r font-bold hover:bg-primary-dark transition">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="flex justify-center md:justify-end space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-primary transition">Press Kit</a>
+                    <a href="#" class="hover:text-primary transition">Privacidad</a>
+                    <a href="#" class="hover:text-primary transition">Términos</a>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-600 text-xs mt-12">
+                &copy; 2025 Arkanis Studios. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
