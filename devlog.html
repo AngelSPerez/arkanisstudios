@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio del Proyecto - Devlog | The Dark Ronkazid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a855f7',
+                        'primary-dark': '#7e22ce',
+                        dark: '#0a0a0f',
+                        darker: '#05050a',
+                        surface: '#15151f',
+                        'surface-light': '#1f1f2e',
+                    },
+                    fontFamily: {
+                        display: ['Orbitron', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient-animate {
+            background: linear-gradient(-45deg, #05050a, #0a0a0f, #1a0a1f, #0f0a1a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.4);
+        }
+        .text-glow-sm {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+        .box-glow {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+        }
+        .prose-custom h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .prose-custom h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #a855f7;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose-custom p {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+        .prose-custom ul, .prose-custom ol {
+            color: #d1d5db;
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .prose-custom li {
+            margin-bottom: 0.5rem;
+        }
+        .prose-custom blockquote {
+            border-left: 4px solid #a855f7;
+            padding-left: 1rem;
+            color: #9ca3af;
+            font-style: italic;
+            margin: 1.5rem 0;
+        }
+        .prose-custom strong {
+            color: #a855f7;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-darker text-gray-200 font-body selection:bg-primary selection:text-white">
+
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 bg-dark/95 backdrop-blur-md border-b border-primary/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-display font-bold text-white">
+                ARKANIS<span class="text-primary">STUDIOS</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#inicio" class="hover:text-primary transition">Inicio</a>
+                <a href="index.html#historia" class="hover:text-primary transition">Historia</a>
+                <a href="index.html#devlog" class="text-primary transition">Devlog</a>
+                <a href="index.html#apoyo" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:bg-primary-dark transition hover:shadow-lg hover:shadow-primary/50">
+                    Donar
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-primary/20 absolute w-full left-0">
+            <div class="flex flex-col p-4 space-y-4 text-center">
+                <a href="index.html#inicio" class="block hover:text-primary">Inicio</a>
+                <a href="index.html#historia" class="block hover:text-primary">Historia</a>
+                <a href="index.html#devlog" class="block text-primary">Devlog</a>
+                <a href="index.html#apoyo" class="block hover:text-primary">Apoyar</a>
+                <a href="index.html#contacto" class="block hover:text-primary">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER DEL DEVLOG -->
+    <header class="relative pt-32 pb-16 bg-gradient-animate overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-30"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <!-- Breadcrumb -->
+                <div class="mb-6">
+                    <a href="index.html#devlog" class="text-primary hover:text-white transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>Volver al Devlog
+                    </a>
+                </div>
+
+                <!-- Metadata -->
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="inline-block py-1 px-4 rounded-full bg-primary/20 text-primary text-sm font-semibold border border-primary/50">
+                        <i class="fa-solid fa-calendar mr-2"></i>30 Octubre, 2025
+                    </span>
+                    <span class="inline-block py-1 px-4 rounded-full bg-surface text-gray-300 text-sm font-semibold border border-primary/20">
+                        <i class="fa-solid fa-clock mr-2"></i>5 min de lectura
+                    </span>
+                    <span class="inline-block py-1 px-4 rounded-full bg-surface text-gray-300 text-sm font-semibold border border-primary/20">
+                        <i class="fa-solid fa-tag mr-2"></i>Anuncio
+                    </span>
+                </div>
+
+                <!-- Título -->
+                <h1 class="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight text-glow">
+                    Inicio del Proyecto: El Comienzo de gran Videojuego
+                </h1>
+
+                <!-- Resumen -->
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    Hoy marca el comienzo oficial del desarrollo de The Dark Ronkazid. En este primer devlog, compartimos nuestra visión, los primeros pasos del proyecto y lo que pueden esperar en los próximos meses.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- IMAGEN DESTACADA -->
+    <section class="py-8 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="rounded-xl overflow-hidden border-2 border-primary/30 box-glow">
+                    <img src="the-dr-title.png" alt="The Dark Ronkazid" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <article class="py-16 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="prose-custom">
+                    <!-- SECCIÓN 1: INTRODUCCIÓN -->
+                    <h2><i class="fa-solid fa-flag-checkered text-primary mr-3"></i>¡Hemos Comenzado!</h2>
+                    <p>
+                        Después de semanas de planificación y preparación, finalmente hemos dado el primer paso oficial en el desarrollo de <strong>The Dark Ronkazid</strong>. Este proyecto ha sido un sueño durante mucho tiempo, y ahora estamos listos para compartir este viaje con todos ustedes.
+                    </p>
+                    <p>
+                        Este juego no es solo otro título indie más. Es una historia personal, una narrativa que hemos llevado en nuestros corazones, y ahora tenemos la oportunidad de darle vida.
+                    </p>
+
+                    <!-- SECCIÓN 2: LA VISIÓN -->
+                    <h2><i class="fa-solid fa-eye text-primary mr-3"></i>Nuestra Visión</h2>
+                    <p>
+                        The Dark Ronkazid es más que un juego de acción; es una exploración profunda de temas como la redención, el perdón y la lucha interna entre la luz y la oscuridad. Queremos crear una experiencia que:
+                    </p>
+                    <ul>
+                        <li><strong>Conecte emocionalmente</strong> con los jugadores a través de una narrativa rica y personajes complejos</li>
+                        <li><strong>Ofrezca combate dinámico</strong> que refleje la dualidad del protagonista entre sus poderes angelicales y demoníacos</li>
+                        <li><strong>Presente un mundo oscuro</strong> pero esperanzador, donde cada decisión tiene consecuencias</li>
+                        <li><strong>Desafíe las percepciones</strong> sobre el bien y el mal, mostrando que la redención siempre es posible</li>
+                    </ul>
+
+                    <!-- QUOTE DESTACADO -->
+                    <blockquote>
+                        "Arkanis no es un héroe tradicional. Es alguien que ha vivido en la oscuridad y debe elegir salir de ella. Su historia es la de todos nosotros cuando enfrentamos nuestros propios demonios internos."
+                    </blockquote>
+
+                    <!-- SECCIÓN 3: QUÉ HEMOS HECHO -->
+                    <h2><i class="fa-solid fa-check-double text-primary mr-3"></i>Progreso Actual</h2>
+                    <p>
+                        En estas primeras semanas, hemos logrado establecer los fundamentos del proyecto:
+                    </p>
+
+                    <h3>Diseño Narrativo</h3>
+                    <p>
+                        Hemos completado el primer borrador completo de la historia, incluyendo todos los actos principales, los arcos de los personajes secundarios y los giros argumentales clave.
+                    </p>
+
+                    <h3>Concept Art Inicial</h3>
+                    <p>
+                        Nuestro equipo de arte ha comenzado a dar vida visual al mundo de The Dark Ronkazid. Los primeros sketches de los personajes y los escenarios clave ya están en desarrollo. Podran ver algunas de estas piezas en el siguiente devlog.
+                    </p>
+
+                    <h3>Prototipo de Mecánicas</h3>
+                    <p>
+                        Aún estamos trabajando en las mecanicas y desarollo del juego en si, ya que ahora nos estamos enfocando en terminar todos los Sprites necesarios para empezar con el juego principal.
+                    </p>
+
+                    <!-- SECCIÓN 4: DESAFÍOS -->
+                    <h2><i class="fa-solid fa-mountain text-primary mr-3"></i>Desafíos por Delante</h2>
+                    <p>
+                        Como cualquier proyecto ambicioso, enfrentamos varios desafíos:
+                    </p>
+                    <ol>
+                        <li><strong>Financiamiento:</strong> Como estudio indie, dependemos del apoyo de la comunidad para hacer realidad esta visión</li>
+                        <li><strong>Desarrollo técnico:</strong> Crear mecánicas de combate que sean profundas pero accesibles requiere mucha iteración</li>
+                        <li><strong>Narrativa visual:</strong> Contar una historia oscura y emocional mientras mantenemos el juego visualmente atractivo</li>
+                        <li><strong>Equilibrio:</strong> Mantener el balance entre gameplay, narrativa y producción artística</li>
+                    </ol>
+
+                    <!-- SECCIÓN 5: PRÓXIMOS PASOS -->
+                    <h2><i class="fa-solid fa-road text-primary mr-3"></i>¿Qué Sigue?</h2>
+                    <p>
+                        En las próximas semanas, nos enfocaremos en:
+                    </p>
+                    <ul>
+                        <li>Refinar el sistema de combate y crear un demo jugable interno</li>
+                        <li>Desarrollar más concept art de personajes y ambientes</li>
+                        <li>Comenzar la composición de la banda sonora</li>
+                        <li>Establecer el pipeline de producción para el desarrollo completo</li>
+                        <li>Construir nuestra comunidad y conectar con futuros jugadores</li>
+                    </ul>
+
+                    <p>
+                        Estaremos compartiendo actualizaciones regulares aquí en el devlog. Queremos que este desarrollo sea lo más transparente posible.
+                    </p>
+
+                    <!-- CALL TO ACTION -->
+                    <div class="bg-surface border-2 border-primary/30 rounded-xl p-8 my-12 box-glow">
+                        <h3 class="text-center mb-4"><i class="fa-solid fa-heart text-primary"></i> Únete al Viaje</h3>
+                        <p class="text-center mb-6">
+                            Tu apoyo es fundamental para hacer realidad este proyecto. Cada contribución nos ayuda a dedicar más tiempo y recursos al desarrollo.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="index.html#apoyo" class="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition text-center shadow-lg shadow-primary/30">
+                                <i class="fa-solid fa-heart mr-2"></i>Apoyar el Proyecto
+                            </a>
+                            <a href="index.html#contacto" class="px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition text-center">
+                                <i class="fa-solid fa-envelope mr-2"></i>Contactar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CIERRE -->
+                    <h2><i class="fa-solid fa-heart-pulse text-primary mr-3"></i>Gracias por Creer</h2>
+                    <p>
+                        Este es solo el comienzo de una aventura épica. Gracias por acompañarnos desde el primer paso. No podemos esperar a compartir más con ustedes en las próximas semanas.
+                    </p>
+                    <p>
+                        Que la luz guíe su camino.
+                    </p>
+                    <p class="text-primary font-semibold">
+                        — El Equipo de Arkanis Studios
+                    </p>
+                </div>
+
+                <!-- TAGS -->
+                <div class="mt-12 pt-8 border-t border-primary/20">
+                    <p class="text-gray-400 text-sm mb-3">Etiquetas:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface rounded-full text-sm text-gray-300 border border-primary/20">#Devlog</span>
+                        <span class="px-3 py-1 bg-surface rounded-full text-sm text-gray-300 border border-primary/20">#Anuncio</span>
+                        <span class="px-3 py-1 bg-surface rounded-full text-sm text-gray-300 border border-primary/20">#IndieGame</span>
+                        <span class="px-3 py-1 bg-surface rounded-full text-sm text-gray-300 border border-primary/20">#GameDev</span>
+                    </div>
+                </div>
+
+                <!-- COMPARTIR -->
+                <div class="mt-8 pt-8 border-t border-primary/20">
+                    <p class="text-gray-400 text-sm mb-3">Compartir:</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-surface rounded-full flex items-center justify-center hover:bg-primary transition border border-primary/20">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-surface rounded-full flex items-center justify-center hover:bg-primary transition border border-primary/20">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-surface rounded-full flex items-center justify-center hover:bg-primary transition border border-primary/20">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-surface rounded-full flex items-center justify-center hover:bg-primary transition border border-primary/20">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- NAVEGACIÓN DEVLOGS -->
+    <section class="py-16 bg-dark border-t border-primary/20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-display font-bold text-white mb-8 text-center">
+                    <i class="fa-solid fa-newspaper text-primary mr-3"></i>Más Devlogs
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Devlog Anterior (placeholder) -->
+                    <div class="bg-surface/50 rounded-xl p-6 border border-primary/20 opacity-50 cursor-not-allowed">
+                        <p class="text-gray-500 text-sm mb-2">
+                            <i class="fa-solid fa-arrow-left mr-2"></i>Anterior
+                        </p>
+                        <p class="text-gray-600">No hay devlogs anteriores</p>
+                    </div>
+
+                    <!-- Devlog Siguiente -->
+                    <a href="#" class="bg-surface rounded-xl p-6 border border-primary/20 hover:border-primary transition group">
+                        <p class="text-gray-400 text-sm mb-2">
+                            Siguiente<i class="fa-solid fa-arrow-right ml-2"></i>
+                        </p>
+                        <p class="text-white font-semibold group-hover:text-primary transition">Arte Conceptual - Los Primeros Diseños</p>
+                        <p class="text-gray-500 text-sm mt-2">11 Nov, 2025</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-12">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">ARKANIS STUDIOS</h3>
+                    <p class="text-gray-500 text-sm">Forjando leyendas</p>
+                </div>
+                <h3 class="text-xl font-display font-bold text-white mb-2">angeldesingscontact@gmail.com</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-primary/20 pt-8">
+                <div class="flex justify-center md:justify-end space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-primary transition">Press Kit</a>
+                    <a href="#" class="hover:text-primary transition">Privacidad</a>
+                    <a href="#" class="hover:text-primary transition">Términos</a>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-600 text-xs mt-12">
+                &copy; 2025 Arkanis Studios. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
